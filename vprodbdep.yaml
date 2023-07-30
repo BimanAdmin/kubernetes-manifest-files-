@@ -36,10 +36,8 @@ spec:
         zone: ap-south-1b
       volumes:
         - name: vpro-db-data
-          # This AWS EBS volume must already exist.
-          awsElasticBlockStore:
-             volumeID: vol-02cd299fac0c75b76
-             fsType: ext4
+          persistentVolumeClaim:
+            claimName: vpro-db-data
 
       initContainers:
         - name: busybox

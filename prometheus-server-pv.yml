@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: vpro-promp-data
+  labels:
+    type: amazonEBS
+spec:
+  storageClassName: manual1
+  capacity:
+    storage: 5Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/mnt/prometheus"
